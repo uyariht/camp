@@ -1,0 +1,44 @@
+version: '2'
+services:
+  php:
+    build: ./server/php
+    container_name: php
+    working_dir: /var/www
+    volumes:
+      - ./app:/var/www
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=database"
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    working_dir: /var/www
+    volumes_from:
+      - php
+    ports:
+      - 80:80
+
+  database:
+    image: mysql:8.0.36
+    container_name: database
+    volumes:
+      - ./server/mysql:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=app"
+      - "MYSQL_USER=app"
+      - "MYSQL_PASSWORD=app@"
+      - "MYSQL_ROOT_PASSWORD=root@"
+    ports:
+      - "3306:3306"
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+        - 8080:80
+    environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=database
+    depends_on:
+        - database
