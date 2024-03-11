@@ -38,6 +38,7 @@
         }
 
         body {
+            background-color: white;
             margin: 0;
             line-height: inherit
         }
