@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<center>
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>ระบบจองห้องประชุมหน่วยงานราชการ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+  <header>
+    <h1>ระบบจองห้องประชุมหน่วยงานราชการ</h1>
+    <div id="search">
+      <form action="/search" method="post">
+        <input type="text" name="name_room" id="name_room">
+        <br>
+        <input type="date" name="date_in" id="date_in">
+        <input type="date" name="date_out" id="date_out">
+        <br>
+        <input type="time" name="time_in" id="time_in">
+        <input type="time" name="time_out" id="time_out">
+        <br>
+        <input type="submit" value="ค้นหา">
+      </form>
+    </div>
+  </header>
 </body>
 </html>
+</center>
