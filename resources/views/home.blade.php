@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<center>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <title>ระบบจองห้องประชุมหน่วยงานราชการ</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style101.css">
 </head>
 <body>
   <header>
@@ -25,4 +24,3 @@
   </header>
 </body>
 </html>
-</center>
