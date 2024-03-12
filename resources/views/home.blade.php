@@ -27,7 +27,7 @@
     #search input,
     #search label {
         font-size: 20px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Inter;
         color: #9B9B9B;
     }
 
